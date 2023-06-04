@@ -19,7 +19,7 @@
 			"@/layout/*": ["components/layout/*"],
 			"@/ui/*": ["components/ui/*"],
 			"@/screens/*": ["components/screens/*"],
-			"@/*": ["./src/*"]
+			"@/*": ["./*"]
 		}
 	},
 	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
