@@ -9,6 +9,8 @@ import {
 	persistStore
 } from 'redux-persist'
 
+import { userSlice } from './user/user.slice'
+
 // import { carouselSlice } from './carousel/carousel.slice'
 // import { cartSlice } from './cart/cart.slice'
 // import { userSlice } from './user/user.slice'
@@ -20,7 +22,7 @@ let mainReducer
 const combinedReducers = combineReducers({
 	// cart: cartSlice.reducer,
 	// carousel: carouselSlice.reducer,
-	// user: userSlice.reducer
+	user: userSlice.reducer
 })
 
 if (isClient) {
