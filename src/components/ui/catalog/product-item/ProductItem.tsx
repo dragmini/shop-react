@@ -5,6 +5,7 @@ import { IProduct } from '@/types/product.interface'
 
 import AddToCardButton from './AddToCardButton'
 import FavoriteButton from './FavoriteButton'
+import ProductRating from './ProductRating'
 
 const ProductItem: FC<{ product: IProduct }> = ({ product }) => {
 	return (
@@ -21,7 +22,7 @@ const ProductItem: FC<{ product: IProduct }> = ({ product }) => {
 			</div>
 			<h3>{product.name}</h3>
 			<div>{product.category.name}</div>
-			<ProductRating rating={product.rating} />
+			<ProductRating product={product} />
 			<div>{product.price}</div>
 		</div>
 	)

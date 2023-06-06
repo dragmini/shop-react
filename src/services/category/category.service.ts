@@ -1,12 +1,12 @@
 import { ICategory } from '@/types/category.interface'
 
-import { instanse } from '@/api/api.interceptor'
+import { axiosClassic, instanse } from '@/api/api.interceptor'
 
 const CATEGORIES = '/categories'
 
 export const CategoryService = {
 	async getAll() {
-		return await instanse<ICategory[]>({
+		return await axiosClassic<ICategory[]>({
 			url: CATEGORIES,
 			method: 'GET'
 		})
@@ -20,7 +20,7 @@ export const CategoryService = {
 	},
 
 	async getBySlug(slug: string) {
-		return await instanse<ICategory>({
+		return await axiosClassic<ICategory>({
 			url: `${CATEGORIES}/by-slug/${slug}`,
 			method: 'GET'
 		})

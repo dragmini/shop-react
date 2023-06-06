@@ -1,4 +1,4 @@
-import { IUser } from '@/types/user.interface'
+import { IUser, IUserFull } from '@/types/user.interface'
 
 import { instanse } from '@/api/api.interceptor'
 
@@ -8,7 +8,7 @@ const USER = '/user'
 
 export const UserService = {
 	async getProfile() {
-		return await instanse<IUser>({
+		return await instanse<IUserFull>({
 			url: `${USER}/profile`,
 			method: 'GET'
 		})

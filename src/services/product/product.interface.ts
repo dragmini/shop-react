@@ -1,3 +1,5 @@
+import { IProduct } from '@/types/product.interface'
+
 export interface IProductType {
 	name: string
 

@@ -4,10 +4,14 @@ import { errorCatch, getContentType } from './api.helper'
 import { getAccessToken, removeFromStorage } from '@/services/auth/auth.helper'
 import { AuthService } from '@/services/auth/auth.service'
 
-export const instanse = axios.create({
+const settings = {
 	baseURL: process.env.SERVER_URL,
 	headers: getContentType()
-})
+}
+
+export const instanse = axios.create(settings)
+
+export const axiosClassic = axios.create(settings)
 
 instanse.interceptors.request.use(async config => {
 	const accessToken = getAccessToken()
@@ -25,7 +29,7 @@ instanse.interceptors.response.use(
 		const originalRequest = error.config
 
 		if (
-			(error.response.status === 401 ||
+			(error?.response?.status === 401 ||
 				errorCatch(error) === 'jwt expired' ||
 				errorCatch(error) === 'jwt must be provided') &&
 			error.config &&
