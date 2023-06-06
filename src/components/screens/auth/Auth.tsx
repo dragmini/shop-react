@@ -2,7 +2,7 @@ import { FC, useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 
 import Heading from '@/ui/Heading'
-import Loader from '@/ui/Loader'
+// import Loader from '@/ui/Loader'
 import Meta from '@/ui/Meta'
 import Button from '@/ui/button/Button'
 import Field from '@/ui/input/Field'
@@ -14,7 +14,6 @@ import { useAuth } from '@/hooks/useAuth'
 
 import { useAuthRedirect } from './useAuthRedirect'
 import { validEmail } from './valid-email'
-import { validPasword } from './valid-password'
 
 const Auth: FC = () => {
 	useAuthRedirect()
