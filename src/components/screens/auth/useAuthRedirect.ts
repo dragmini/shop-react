@@ -9,6 +9,6 @@ export const useAuthRedirect = () => {
 	const { replace } = useRouter()
 
 	useEffect(() => {
-		if (user) replace('/')
+		// if (user) replace('/')
 	}, [user])
 }

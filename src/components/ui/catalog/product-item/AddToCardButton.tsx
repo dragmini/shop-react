@@ -8,9 +8,7 @@ import { IProduct } from '@/types/product.interface'
 
 const AddToCardButton: FC<{ product: IProduct }> = ({ product }) => {
 	const { addToCard, removeFromCard } = useActions()
-	const { items } = useCard()
-
-	if (!items) return null
+	const { items = [] } = useCard()
 
 	const currentElement = items.find(
 		(cardItem: any) => cardItem.product.id === product.id

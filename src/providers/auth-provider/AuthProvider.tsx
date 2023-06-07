@@ -27,9 +27,9 @@ const AuthProvider: FC<PropsWithChildren<TypeComponentAuthFields>> = ({
 	}, [])
 
 	useEffect(() => {
-		const refrechToken = Cookies.get('refrechToken')
+		const refreshToken = Cookies.get('refreshToken')
 
-		if (!refrechToken && user) logout()
+		if (!refreshToken && user) logout()
 	}, [pathname])
 
 	return isOnlyUser ? (
