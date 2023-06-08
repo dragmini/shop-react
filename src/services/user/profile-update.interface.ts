@@ -1,7 +1,7 @@
 export interface IProfileUpdate {
-	email: string
+	email?: string
 
-	password?: string
+	// password?: string
 
 	avatarPath?: string
 

@@ -5,7 +5,17 @@ import { IField } from './field.interface'
 
 const Field = forwardRef<HTMLInputElement, IField>(
 	(
-		{ placeholder, error, className, type = 'text', style, Icon, ...rest },
+		{
+			label,
+			placeholder,
+			error,
+			value,
+			className,
+			type = 'text',
+			style,
+			Icon,
+			...rest
+		},
 		ref
 	) => {
 		return (
@@ -13,7 +23,7 @@ const Field = forwardRef<HTMLInputElement, IField>(
 				<label className='flex flex-col'>
 					<span className='mb-1 block'>
 						{Icon && <Icon className='mr-3' />}
-						{placeholder}
+						{label || placeholder}
 					</span>
 					<input
 						ref={ref}

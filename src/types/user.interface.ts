@@ -10,7 +10,19 @@ export interface IUser {
 	phone: string
 }
 
+export interface IUserUpdate {
+	email?: string
+	name?: string
+	avatarPath?: string
+	phone?: string
+}
+
 export interface IUserFull extends IUser {
 	favorites: IProduct[]
 	// orders: IOrder[]
+}
+
+export interface IUserPreview {
+	name: string
+	avatarPath: string
 }

@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query'
-import { FC, useState } from 'react'
+import { FC, useMemo, useState } from 'react'
 
 import { IProduct, TypePaginationProducts } from '@/types/product.interface'
 
@@ -32,16 +32,26 @@ const CatalogPagination: FC<ICatalogPagination> = ({ data, title }) => {
 				perPage: 4
 			}),
 		{
+			onSuccess: newRespose => {
+				setFullProducts([...fullProducts, ...newRespose.products])
+			},
 			initialData: data
 		}
 	)
 
+	const [fullProducts, setFullProducts] = useState<IProduct[]>([])
+
+	// const actions = useMemo(
+	// 	() => setFullProducts(old => [...old, response.products]),
+	// 	[fullProducts, response.products]
+	// )
+
 	return (
 		<section>
 			{title && <Heading className='mb-5'>{title}</Heading>}
-			<SortDropdown setSortType={setSortType} sortType={sortType} />
+			{/* <SortDropdown setSortType={setSortType} sortType={sortType} /> */}
 			<div className='grid grid-cols-4 gap-10'>
-				{response.products.map(product => (
+				{fullProducts.map(product => (
 					<ProductItem key={product.id} product={product} />
 				))}
 			</div>
