@@ -15,8 +15,8 @@ interface ICatalog {
 const Catalog: FC<ICatalog> = ({ products, title }) => {
 	return (
 		<section>
-			{title && <Heading>{title}</Heading>}
-			<div className='grid grid-cols-4 gap-10 p-12'>
+			{title && <Heading className='mb-5'>{title}</Heading>}
+			<div className='grid grid-cols-4 gap-10'>
 				{products.map(product => (
 					<ProductItem key={product.id} product={product} />
 				))}
