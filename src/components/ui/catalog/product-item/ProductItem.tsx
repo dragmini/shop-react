@@ -12,7 +12,7 @@ import ProductRating from './ProductRating'
 
 const ProductItem: FC<{ product: IProduct }> = ({ product }) => {
 	return (
-		<div>
+		<div className='animate-scaleIn'>
 			<div className='bg-white rounded-xl relative overflow-hidden'>
 				<div className='absolute top-2 right-3 z-10'>
 					<FavoriteButton productId={product.id} />

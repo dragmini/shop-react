@@ -8,11 +8,13 @@ const PRODUCTS = '/products'
 
 export const ProductService = {
 	async getAll(queryData = {} as IProductFilters) {
-		return axiosClassic<TypePaginationProducts>({
+		const { data } = await axiosClassic<TypePaginationProducts>({
 			url: PRODUCTS,
 			method: 'GET',
 			params: queryData
 		})
+
+		return data
 	},
 
 	async getSimilar(productId: string | number) {

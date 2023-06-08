@@ -1,7 +1,7 @@
 import { FC } from 'react'
 
 import Meta from '@/ui/Meta'
-import Catalog from '@/ui/catalog/Catalog'
+import CatalogPagination from '@/ui/catalog/CatalogPagination'
 import Layout from '@/ui/layout/Layout'
 
 import { logout } from '@/store/user/user.actions'
@@ -17,7 +17,10 @@ const Home: FC<TypePaginationProducts> = ({ products, length }) => {
 		<Meta title='Main'>
 			<Layout>
 				{!!user && <button onClick={() => logout()}>Logout</button>}
-				<Catalog title='Freshed products' products={products || []} />
+				<CatalogPagination
+					title='Freshed products'
+					data={{ products, length }}
+				/>
 			</Layout>
 		</Meta>
 	)
