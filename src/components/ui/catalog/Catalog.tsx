@@ -13,7 +13,7 @@ interface ICatalog {
 
 const Catalog: FC<ICatalog> = ({ products, title }) => {
 	return (
-		<section>
+		<section className=' overflow-y-auto catalog'>
 			{title && <Heading className='mb-5'>{title}</Heading>}
 			{/* {isPagination && <SortDropdown />} */}
 			<div className='grid grid-cols-4 gap-10'>

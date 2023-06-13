@@ -47,7 +47,7 @@ const CatalogPagination: FC<ICatalogPagination> = ({ data, title }) => {
 	// )
 
 	return (
-		<section>
+		<section className=' overflow-y-auto catalog'>
 			{title && <Heading className='mb-5'>{title}</Heading>}
 			{/* <SortDropdown setSortType={setSortType} sortType={sortType} /> */}
 			<div className='grid grid-cols-4 gap-10'>

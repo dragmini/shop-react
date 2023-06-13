@@ -23,11 +23,6 @@ const ProfileSettings: FC<{ title: string }> = ({ title }) => {
 		reset
 	} = useForm<IProfileUpdate>({
 		mode: 'onChange'
-		// defaultValues: {
-		// 	name: profile?.name,
-		// 	email: profile?.email,
-		// 	phone: profile?.phone
-		// }
 	})
 
 	if (!profile) return null
@@ -65,22 +60,12 @@ const ProfileSettings: FC<{ title: string }> = ({ title }) => {
 							label='Email'
 							placeholder={profile.email}
 						/>
-						{/* <Field
+
+						<Field
 							{...formProfile('phone', {})}
 							label='Phone'
-							placeholder={profile.phone} */}
-						{/* /> */}
-
-						<PhoneNumberInput
-							placeholder='Phone'
-							country='RU'
-							onChange={() => formProfile('phone', {})}
+							placeholder={profile.phone}
 						/>
-						{/* <Field
-						{...formProfile('name', {})}
-						label='Name'
-						placeholder={profile.name}
-					/> */}
 					</div>
 				</div>
 

@@ -1,19 +1,20 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { FC, PropsWithChildren } from 'react'
+import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai'
 import { BsMinecartLoaded } from 'react-icons/bs'
 import { RiShoppingCartFill, RiShoppingCartLine } from 'react-icons/ri'
 
 import { useActions } from '@/hooks/useActions'
 import { useAuth } from '@/hooks/useAuth'
-import { useCard } from '@/hooks/useCard'
+// import { useCard } from '@/hooks/useCart'
 import { useProfile } from '@/hooks/useProfile'
 
 import PreviewProfile from './PreviewProfile'
 
 const Header: FC = () => {
 	const { addToCard, removeFromCard } = useActions()
-	const { items = [] } = useCard()
+	// const { items = [] } = useCard()
 
 	const { profile } = useProfile()
 
@@ -46,6 +47,9 @@ const Header: FC = () => {
 						/>
 					</button>
 				)}
+				<button onClick={() => replace('/profile/favorites')}>
+					<AiOutlineHeart size={35} className='text-white cursor-pointer' />
+				</button>
 				<button onClick={() => replace('/basket')}>
 					<BsMinecartLoaded size={30} className='text-white cursor-pointer' />
 				</button>

@@ -9,18 +9,17 @@ import {
 	persistStore
 } from 'redux-persist'
 
-import { userSlice } from './user/user.slice'
-
+import { cardSlice } from './card/card.slice'
 // import { carouselSlice } from './carousel/carousel.slice'
 // import { cartSlice } from './cart/cart.slice'
-// import { userSlice } from './user/user.slice'
+import { userSlice } from './user/user.slice'
 
 const isClient = typeof window !== 'undefined'
 
 let mainReducer
 
 const combinedReducers = combineReducers({
-	// cart: cartSlice.reducer,
+	cart: cardSlice.reducer,
 	// carousel: carouselSlice.reducer,
 	user: userSlice.reducer
 })

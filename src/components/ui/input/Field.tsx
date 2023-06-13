@@ -9,7 +9,6 @@ const Field = forwardRef<HTMLInputElement, IField>(
 			label,
 			placeholder,
 			error,
-			value,
 			className,
 			type = 'text',
 			style,

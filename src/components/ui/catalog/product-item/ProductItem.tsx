@@ -14,7 +14,7 @@ const ProductItem: FC<{ product: IProduct }> = ({ product }) => {
 	return (
 		<div className='animate-scaleIn'>
 			<div className='bg-white rounded-xl relative overflow-hidden'>
-				<div className='absolute top-2 right-3 z-10'>
+				<div className='absolute top-2 right-3 z-10 flex flex-col gap-2'>
 					<FavoriteButton productId={product.id} />
 					<AddToCardButton product={product} />
 				</div>

@@ -2,21 +2,22 @@ import { FC } from 'react'
 import { RiShoppingCartFill, RiShoppingCartLine } from 'react-icons/ri'
 
 import { useActions } from '@/hooks/useActions'
-import { useCard } from '@/hooks/useCard'
+import { useCart } from '@/hooks/useCart'
 
 import { IProduct } from '@/types/product.interface'
 
 const AddToCardButton: FC<{ product: IProduct }> = ({ product }) => {
 	const { addToCard, removeFromCard } = useActions()
-	const { items = [] } = useCard()
+	const { items } = useCart()
 
 	const currentElement = items.find(
-		(cardItem: any) => cardItem.product.id === product.id
+		(cartItem: any) => cartItem.product.id === product.id
 	)
 
 	return (
 		<div>
 			<button
+				className='bg-white p-2 rounded-lg border border-black'
 				onClick={() =>
 					currentElement
 						? removeFromCard({ id: currentElement.id })

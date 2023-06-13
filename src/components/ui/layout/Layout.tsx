@@ -5,7 +5,7 @@ import SideBar from './sidebar/Sidebar'
 
 const Layout: FC<PropsWithChildren<unknown>> = ({ children }) => {
 	return (
-		<div>
+		<div className='h-screen'>
 			<Header />
 			<div
 				className='grid grid-cols-2'
