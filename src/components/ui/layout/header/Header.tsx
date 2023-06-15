@@ -34,7 +34,7 @@ const Header: FC = () => {
 
 	return (
 		<header className='bg-secondary w-full h-20 flex items-center justify-between px-4'>
-			<Link href='/' className='text-white text-lg'>
+			<Link href='/' className='text-white text-[22px]'>
 				Shop
 			</Link>
 			<div className='flex items-center gap-5'>

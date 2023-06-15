@@ -16,6 +16,7 @@ const SideBar: FC = () => {
 			<div className='flex flex-col gap-2 justify-start items-start pl-8 mt-4'>
 				{categories.map(category => (
 					<Link
+						key={category.slug}
 						href={`/category/${category.slug}`}
 						className='text-white text-[16px]'
 					>
