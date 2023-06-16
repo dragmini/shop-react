@@ -7,7 +7,9 @@ import { IProduct } from '@/types/product.interface'
 
 import { convertPrice } from '@/utils/convertPrice'
 
-import AddToCartInline from './AddToCartInline'
+import AddToCardButton from '../catalog/product-item/AddToCardButton'
+
+// import AddToCartInline from './AddToCartInline'
 
 interface IProductInformation {
 	product: IProduct
@@ -31,12 +33,13 @@ export default function ProductInformation({ product }: IProductInformation) {
 			<div className='mt-4 text-sm'>
 				<span className='opacity-50 mr-1'>Delivery</span> Thursday, June 10
 			</div>
-			<AddToCartInline product={product} />
+			{/* <AddToCartInline product={product} /> */}
 			<p className='flex items-center mt-2 opacity-40 text-sm'>
 				<FaLock className='mr-2' /> Secure transaction
 			</p>
-			<div className='absolute top-6 right-6'>
+			<div className='absolute top-6 right-6 flex flex-col gap-2'>
 				<FavoriteButton productId={product.id} />
+				<AddToCardButton product={product} />
 			</div>
 		</div>
 	)

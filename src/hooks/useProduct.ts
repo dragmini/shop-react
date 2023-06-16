@@ -6,7 +6,7 @@ import { ProductService } from '@/services/product/product.service'
 
 export const useProduct = (slug: string) => {
 	const { data } = useQuery(
-		['get categories'],
+		['get product'],
 		() => ProductService.getBySlug(slug),
 		{
 			select: ({ data }) => data,
@@ -16,5 +16,5 @@ export const useProduct = (slug: string) => {
 		}
 	)
 
-	return { product: data }
+	return data
 }
